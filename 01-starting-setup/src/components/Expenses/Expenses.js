@@ -22,6 +22,7 @@ function Expenses(props) {
                 date={props.items[2].date}
             />
         </Card>
+        
     )
 }
 export default Expenses;
