@@ -14,31 +14,18 @@ const ExpenseForm = ( props ) => {
 
     const titleChangedHandler = (e) => {
         setEnteredTitle(e.target.value);
-        // setUserInput({
-        //     ...userInput, //SPREAD OPERATOR
-        //     enteredTitle: e.target.value,
-        // })
     }
 
     const amountChangedHandler = (e) => {
         setEnteredAmount(e.target.value);
-        // setUserInput({
-        //     ...userInput, //SPREAD OPERATOR
-        //     enteredAmount: e.target.value,
-        // })
     }
 
     const dateChangedHandler = (e) => {
         setEnteredDate(e.target.value);
-        // setUserInput({
-        //     ...userInput, //SPREAD OPERATOR
-        //     enteredDate: e.target.value,
-        // })
     }
 
     const submitHandler = (event) => {
         event.preventDefault();
-        
         const expenseData = {
             title: enteredTitle,
             amount: enteredAmount,

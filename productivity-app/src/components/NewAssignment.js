@@ -1,19 +1,62 @@
-import React from 'react'
-import GradeForm from './GradeForm'
+import React, { useState } from 'react'
 
 const NewAssignment = ( props ) => {
+    const [assignmentName, setAssignmentName] = useState(props.assignmentName);
+    const [currentMark, setCurrentMark] = useState(props.currentGrade);
+    const [gradeWeight, setGradeWeight] = useState(props.currentMark);
+    
+    const assignmentNameHandler = (e) => {
+        setAssignmentName(e.target.value)
+        updateAssignment();
+    }
 
-    const onSaveAssignmentData = (enteredAssignmentData) => {
-        const assignmentData = {
-            ...enteredAssignmentData,
-            id: Math.random().toString(),
+    const currentMarkHandler = (e) => {
+        setCurrentMark(parseInt(e.target.value));
+        updateAssignment();
+
+    }
+
+    const gradeWeightHandler = (e) => {
+        setGradeWeight(parseInt(e.target.value));
+        updateAssignment();
+    }
+
+    const updateAssignment = () => {
+        const id = props.id;
+        const updatedAssignment = {
+            assignmentName: assignmentName,
+            currentMark: currentMark,
+            gradeWeight: gradeWeight,
+            id: id,
         }
-        props.onAddAssignment(assignmentData);
+
+        props.newAssignmentHandler(updatedAssignment);
     } 
 
-    return (
-       <GradeForm onSaveAssignmentData={onSaveAssignmentData}/>
-    )
+
+  return (
+    <div>
+        <input type="text" className="text" 
+        placeholder='Assignment Name'  
+        value={assignmentName}
+        onChange={assignmentNameHandler}
+        />
+        <input 
+        type="text" className="text" 
+        placeholder='Current Mark'  
+        value={currentMark}
+        onChange={currentMarkHandler}
+        />
+        <input type="text" className="text" 
+        placeholder='Grade Weight' 
+        value={gradeWeight}
+        onChange={gradeWeightHandler}
+        />
+    </div>
+
+
+
+  )
 }
 
 export default NewAssignment
