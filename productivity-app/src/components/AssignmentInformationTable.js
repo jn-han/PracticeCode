@@ -4,65 +4,62 @@ import NewAssignment from './NewAssignment'
 
 const AssignmentInformationTable = ( props ) => {
   const [average, setAverage] = useState(0);
+  const [currentGrade, setCurrentGrade] = useState(0);
   let items = props.items;
 
-  const calculateAverage = () => {
-    let sumCurrentGrade = 0;
-    let totalAssignments = 0;
-
-    console.log(typeof(props.items[0].currentGrade));
-
-    for(let i = 0; i < props.items.length; i++) {
-      if (parseInt(props.items[i].currentGrade) != 0) {
-        sumCurrentGrade = parseInt(props.items[i].currentGrade);
-        totalAssignments++;
-      }
-    }
-
-    console.log(sumCurrentGrade)
-    console.log(totalAssignments)
-    console.log(sumCurrentGrade/totalAssignments)
-
-    setAverage (sumCurrentGrade / totalAssignments)
-
-    return average;
+  const updateAssignmentName = (assignmentName, id) => {
+    items[id].assignmentName = assignmentName;
   } 
 
-  
-  const newAssignmentHandler = (updatedAssignment) => {
-    let item = {...items[parseInt(updatedAssignment.id)]}
-    item = updatedAssignment;
-    items[parseInt(updatedAssignment.id)] = item;
-    
-    console.log(parseInt(updatedAssignment.id))
-    props.updateAssignmentList(items);
-    
+  const updateCurrentMark = (currentMark, id) => {
+    items[id].currentGrade = currentMark;
+  }
 
-  } 
-
+  const updateGradeWeight = (gradeWeight, id) => {
+    items[id].weightedGrade = gradeWeight;
+  }
 
   const submitHandler = (e) => {
     e.preventDefault();
- 
+    let sumAssignmentGrades = 0;
+    let totalAssignments = 0;
+    let totalWeight = 0;
+    let variableWeight = 0;
+  
+    props.updateAssignmentList(items);
 
-    
+
+    for(let i = 0; i < items.length; i++) {
+      if(parseInt(items[i].currentGrade) != 0 && parseInt(items[i].weightedGrade) != 0){
+        variableWeight += (parseInt(items[i].currentGrade) * parseInt(items[i].weightedGrade));
+        totalAssignments++;
+        sumAssignmentGrades += parseInt(items[i].currentGrade);
+        totalWeight += parseInt(items[i].weightedGrade);
+      }
+    }
+    console.log(variableWeight)
+    setAverage(parseFloat(sumAssignmentGrades / totalAssignments).toFixed(2))
+    setCurrentGrade(parseFloat(variableWeight / totalWeight).toFixed(2));
   }
 
   return (
     <div>
         {props.items.map( grades => (
            <NewAssignment
-            newAssignmentHandler={newAssignmentHandler}
             key={grades.id}
             id={grades.id}
+            updateAssignmentName={updateAssignmentName}
+            updateCurrentMark={updateCurrentMark}
+            updateGradeWeight={updateGradeWeight}
             assignmentName={grades.assignmentName}
             currentGrade={grades.currentGrade}
             weightedGrade={grades.weightedGrade}
             />
         ))}
-      <button onClick={submitHandler}>Hello</button>
-      <h2>Current Grade: {average}</h2>
-      <button onClick={calculateAverage}>avg</button>
+      <button onClick={submitHandler}>Calculate!</button>
+      <h2>Average Assignment Grade: {average}</h2>
+      <h2>Current Mark: {currentGrade}</h2>
+
     </div>
 
   )

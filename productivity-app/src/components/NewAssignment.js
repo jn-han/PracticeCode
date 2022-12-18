@@ -1,52 +1,44 @@
 import React, { useState } from 'react'
 
 const NewAssignment = ( props ) => {
-    const [assignmentName, setAssignmentName] = useState(props.assignmentName);
-    const [currentMark, setCurrentMark] = useState(props.currentGrade);
-    const [gradeWeight, setGradeWeight] = useState(props.currentMark);
+    const [assignmentName, setAssignmentName] = useState('');
+    const [currentMark, setCurrentMark] = useState();
+    const [gradeWeight, setGradeWeight] = useState();
     
     const assignmentNameHandler = (e) => {
         setAssignmentName(e.target.value)
-        updateAssignment();
+        props.updateAssignmentName(e.target.value, props.id)
+
     }
 
     const currentMarkHandler = (e) => {
-        setCurrentMark(parseInt(e.target.value));
-        updateAssignment();
-
+        setCurrentMark(e.target.value);
+        props.updateCurrentMark(e.target.value, props.id)
     }
 
     const gradeWeightHandler = (e) => {
-        setGradeWeight(parseInt(e.target.value));
-        updateAssignment();
+        setGradeWeight(e.target.value);
+        props.updateGradeWeight(e.target.value, props.id)
     }
 
-    const updateAssignment = () => {
-        const id = props.id;
-        const updatedAssignment = {
-            assignmentName: assignmentName,
-            currentMark: currentMark,
-            gradeWeight: gradeWeight,
-            id: id,
-        }
-
-        props.newAssignmentHandler(updatedAssignment);
-    } 
 
 
   return (
     <div>
         <input type="text" className="text" 
-        placeholder='Assignment Name'  
+        placeholder='Assignment Name'
+
         onChange={assignmentNameHandler}
         />
         <input 
-        type="text" className="text" 
-        placeholder='Current Mark'  
+        type="number" className="text" 
+        placeholder='Current Mark'
+
         onChange={currentMarkHandler}
         />
-        <input type="text" className="text" 
+        <input type="number" className="text" 
         placeholder='Grade Weight' 
+
         onChange={gradeWeightHandler}
         />
     </div>

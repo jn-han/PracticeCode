@@ -5,31 +5,31 @@ const DUMMY_GRADES = [
   { 
     assignmentName: "",
     currentGrade: 0,
-    weightedGrade: '',
+    weightedGrade: 0,
     id: 0,
   },
   { 
     assignmentName: "",
     currentGrade: 0,
-    weightedGrade: '',
+    weightedGrade: 0,
     id: 1,
   },
   { 
     assignmentName: "",
     currentGrade: 0,
-    weightedGrade: '',
+    weightedGrade: 0,
     id: 2,
   },
   { 
     assignmentName: "",
     currentGrade: 0,
-    weightedGrade: '',
+    weightedGrade: 0,
     id: 3,
   },
   { 
     assignmentName: "",
     currentGrade: 0,
-    weightedGrade: 0,
+    weightedGrade: "",
     id: 4,
   },
   { 
@@ -47,6 +47,8 @@ function App() {
     setGrades(newList)
     console.log(newList);
   } 
+
+  
 
   return (
     <div className="App">
