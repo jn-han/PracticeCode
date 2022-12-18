@@ -38,18 +38,15 @@ const NewAssignment = ( props ) => {
     <div>
         <input type="text" className="text" 
         placeholder='Assignment Name'  
-        value={assignmentName}
         onChange={assignmentNameHandler}
         />
         <input 
         type="text" className="text" 
         placeholder='Current Mark'  
-        value={currentMark}
         onChange={currentMarkHandler}
         />
         <input type="text" className="text" 
         placeholder='Grade Weight' 
-        value={gradeWeight}
         onChange={gradeWeightHandler}
         />
     </div>
