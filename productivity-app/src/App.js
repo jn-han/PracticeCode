@@ -1,5 +1,6 @@
 import { useState } from "react";
 import AssignmentInformationTable from "./components/AssignmentInformationTable";
+import './App.css'
 
 const DUMMY_GRADES = [
   { 
@@ -48,13 +49,17 @@ function App() {
     console.log(newList);
   } 
 
-  
+  const addNewAssignment = (newList) => {
+    setGrades((prevGrades => {
+      return [newList, ...prevGrades]
+    }))
+  } 
 
   return (
     <div className="App">
       <header className="App-header">
         <h1>Grade Tracker</h1>
-        <AssignmentInformationTable items={grades} updateAssignmentList={updateAssignmentList}/>
+        <AssignmentInformationTable items={grades} addNewAssignment={addNewAssignment} updateAssignmentList={updateAssignmentList}/>
       </header>
     </div>
   );

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './NewAssignment.css'
 
 const NewAssignment = ( props ) => {
     const [assignmentName, setAssignmentName] = useState('');
@@ -24,21 +25,18 @@ const NewAssignment = ( props ) => {
 
 
   return (
-    <div>
+    <div className='form'>
         <input type="text" className="text" 
         placeholder='Assignment Name'
-
         onChange={assignmentNameHandler}
         />
         <input 
-        type="number" className="text" 
+        type="number" className="numMark" 
         placeholder='Current Mark'
-
         onChange={currentMarkHandler}
         />
-        <input type="number" className="text" 
+        <input type="number" className="numWeight" 
         placeholder='Grade Weight' 
-
         onChange={gradeWeightHandler}
         />
     </div>

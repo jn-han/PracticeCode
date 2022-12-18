@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import NewAssignment from './NewAssignment'
+import './AssignmentInformationTable.css'
 
 const AssignmentInformationTable = ( props ) => {
   const [average, setAverage] = useState(0);
@@ -37,13 +38,30 @@ const AssignmentInformationTable = ( props ) => {
         totalWeight += parseInt(items[i].weightedGrade);
       }
     }
-    console.log(variableWeight)
     setAverage(parseFloat(sumAssignmentGrades / totalAssignments).toFixed(2))
     setCurrentGrade(parseFloat(variableWeight / totalWeight).toFixed(2));
   }
 
+  const addAssignmentHandler = () => {
+    const newAssignment = {
+      assignmentName: '',
+      currentGrade: 0,
+      weightedGrade: 0,
+      id: items.length,
+    }
+
+    props.addNewAssignment(newAssignment);
+
+
+  }
+
   return (
-    <div>
+    <div className='infoTable'>
+      <div className='titles'>
+        <p className='assignmentNameTitle'>Assignment Name</p>
+        <p className='markTitle'>Mark</p>
+        <p className='weightTitle'>Weight</p>
+      </div>
         {props.items.map( grades => (
            <NewAssignment
             key={grades.id}
@@ -56,9 +74,11 @@ const AssignmentInformationTable = ( props ) => {
             weightedGrade={grades.weightedGrade}
             />
         ))}
-      <button onClick={submitHandler}>Calculate!</button>
+      <button className='calculateBtn' onClick={submitHandler}>Calculate!</button>
+      <br></br>
+      <button className='calculateBtn' onClick={addAssignmentHandler}>Add Another Assignment</button>
       <h2>Average Assignment Grade: {average}</h2>
-      <h2>Current Mark: {currentGrade}</h2>
+      <h2>Current Grade: {currentGrade}</h2>
 
     </div>
 

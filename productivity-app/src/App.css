@@ -1,0 +1,20 @@
+body {
+    background-color: #2D3142;
+
+}
+.App {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.App-header {
+    background-color: #BFC0C0;
+    border-radius: 7px;
+    width: 70%;
+    padding: 20px
+}
+
+h1 {
+    margin-left: 10px;
+}

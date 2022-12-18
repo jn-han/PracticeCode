@@ -1,0 +1,28 @@
+.text {
+    width: 200px;
+    height: 40px;
+    border-style: hidden;
+}
+
+.numMark {
+    width: 100px;
+    border-style: hidden;
+
+}
+
+input {
+    height: 40px;
+    border-radius: 5px;
+    border-style: hidden;
+    margin: 10px;
+}
+
+.numWeight {
+    width: 100px;
+    border-style: hidden;
+}
+
+.form {
+    display: flex;
+
+}
