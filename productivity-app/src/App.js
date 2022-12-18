@@ -45,8 +45,7 @@ function App() {
   const [grades, setGrades] = useState(DUMMY_GRADES);
 
   const updateAssignmentList = (newList) => {
-    setGrades(newList)
-    console.log(newList);
+    setGrades(newList);
   } 
 
   const addNewAssignment = (newList) => {
@@ -58,7 +57,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Grade Tracker</h1>
+        <div className="intro">
+          <h1>Grade Calculator</h1>
+          <p>by Josh Nguyen <a href="https://github.com/jn-han" target="_blank" className="github">Github</a></p>  
+        </div>
         <AssignmentInformationTable items={grades} addNewAssignment={addNewAssignment} updateAssignmentList={updateAssignmentList}/>
       </header>
     </div>
