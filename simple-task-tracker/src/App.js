@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import Tasks from './components/Tasks';
 import './App.css';
+import { useState } from 'react';
+
+const DUMMY_TASKS = [
+  {
+    title: "Clean up room",
+    date: new Date(2022,12,21),
+    id: 1
+  },
+  {
+    title: "Do Homework",
+    date: new Date(2022,12,22),
+    id: 2
+  }
+]
+
 
 function App() {
+  const [tasks, setTasks] = useState(DUMMY_TASKS);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="">
+      <h1>Simple Task Tracker</h1>
+      <Tasks items={tasks}/>
     </div>
   );
 }
