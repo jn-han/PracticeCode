@@ -1,9 +1,10 @@
 import Task from './Task'
+import './Tasks.css'
 
 
 const Tasks = ( props ) => {
     return (
-        <div>
+        <div className='task-list-display'>
             {props.items.map(task => (
                 <Task
                 key={task.id}
@@ -11,6 +12,7 @@ const Tasks = ( props ) => {
                 date={task.date}
                 />
             ))}
+            <InputForm/>
         </div>
     )
 }
