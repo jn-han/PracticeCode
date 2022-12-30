@@ -1,15 +1,16 @@
 import React from 'react'
+import './TaskDate.css'
 
 const TaskDate = ( props ) => {
     const month = props.date.toLocaleString('en-us', {month: 'long'});
     const day = props.date.toLocaleString('en-us', {day: '2-digit'});
     const year = props.date.getFullYear();
+    const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    const dayOfWeek = weekday[props.date.getDay()]
 
   return (
-        <div className="">
-            <div className="">{month}</div>
-            <div className="">{year}</div>
-            <div className="">{day}</div>
+        <div className='box'>
+            <div className="">{dayOfWeek}	&#8226; {month} {day}st, {year} </div>
         </div>
   )
 }

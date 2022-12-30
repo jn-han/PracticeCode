@@ -1,0 +1,32 @@
+.taskform--view {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.taskform--view > * {
+    margin: 10px;
+}
+
+textarea {
+    height: 3rem;
+}
+
+/* .taskform--body {
+    display: flex;
+    width: 70%;
+    justify-content:space-around;
+    align-items: flex-end;
+} */
+
+.before--click {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.before--click > * {
+    margin: 10px;
+}
+
+.addTask--p {
+    
+}
