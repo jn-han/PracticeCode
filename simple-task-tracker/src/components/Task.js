@@ -4,8 +4,8 @@ import './Task.css'
 
 const Task = ( props ) => {
   return (
-    <div className='task--box'>
-        <p className='task--title'>{props.title}</p>
+    <div>
+        <h1>{props.title}</h1>
     </div>
   )
 }

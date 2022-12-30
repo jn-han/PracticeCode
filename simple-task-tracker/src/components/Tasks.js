@@ -1,13 +1,10 @@
 import Task from './Task'
-import './Tasks.css'
 import TaskDate from './TaskDate'
-import TaskForm from './TaskForm'
 
 
 const Tasks = ( props ) => {
     return (
-        <div className='taskPanel'>
-            
+        <div>
             {props.items.map(task => (
                 <div>
                     <TaskDate 
@@ -20,7 +17,6 @@ const Tasks = ( props ) => {
                     />
                 </div>
             ))}
-            <TaskForm></TaskForm>
         </div>
     )
 }

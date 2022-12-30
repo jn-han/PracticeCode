@@ -27,7 +27,7 @@ const TaskForm = () => {
             </div> 
             :
             <div className='before--click' onClick={addButtonHandler}>
-                <p><span>&#43;</span> <span className='addTask--p'>Add Task</span></p>
+                <p><span>&#43;</span><span className='addTask--p'>Add Task</span></p>
             </div>
             }
             
