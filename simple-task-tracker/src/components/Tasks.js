@@ -1,12 +1,14 @@
 import Task from './Task'
 import TaskDate from './TaskDate'
+import TaskForm from './TaskForm'
+import './Tasks.css'
 
 
 const Tasks = ( props ) => {
     return (
-        <div>
+        <div className='view--tasks'>
             {props.items.map(task => (
-                <div>
+                <div className=''>
                     <TaskDate 
                     date={task.date}
                     key={Math.random()}
@@ -17,6 +19,7 @@ const Tasks = ( props ) => {
                     />
                 </div>
             ))}
+            <TaskForm/>
         </div>
     )
 }
