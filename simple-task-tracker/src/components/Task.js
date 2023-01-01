@@ -4,7 +4,8 @@ import './Task.css'
 
 const Task = ( props ) => {
   return (
-    <div>
+    <div className='task-view'>
+        <input type="checkbox" className="task-check"/>
         <h1>{props.title}</h1>
     </div>
   )

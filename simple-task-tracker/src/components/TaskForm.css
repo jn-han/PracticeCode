@@ -1,10 +1,15 @@
-.taskform--view {
+.taskform--gatherInfo {
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     width: 100%;
 }
-.taskform--view > * {
+.taskform--gatherInfo * {
     margin: 10px;
+    border-style: none;
 }
 
 textarea {
@@ -18,15 +23,69 @@ textarea {
     align-items: flex-end;
 } */
 
-.before--click {
-    display: flex;
-    justify-content: flex-start;
-}
 
-.before--click > * {
-    margin: 10px;
+.addSymbol--p {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: inline-block;
+    font: 20px Arial, Sans-serif;
+
 }
 
 .addTask--p {
-    
+    font: 20px Arial, Sans-Serif;
+    color: grey;
+}
+
+
+.before--click:hover .addSymbol--p {
+    color: white;
+    background-color: black;
+    border-radius: 50%;
+    height: 22px;
+    width: 22px;
+}
+
+.before--click:hover .addTask--p {
+    color: black;
+}
+
+.before--click:hover {
+    cursor: pointer;
+}
+
+.taskform--body {
+    display: flex;
+    justify-content: start;
+    width: 50%;
+}
+
+.newTask-organizers * {
+    border-style: none;
+    cursor: pointer;
+}
+
+.submit--cancel--btn:hover * {
+    cursor: pointer;
+}
+
+.submit--cancel--btn * {
+    border-style: none;
+    margin: 5px;
+    border-radius: 5px;
+    padding: 10px 10px;
+}
+
+.addBtn {
+    color: white;
+    background-color: #3F3D3D;
+}
+
+.addBtn:hover {
+    background-color: black;
+}
+
+.cancelBtn:hover {
+    filter: brightness(95%)
 }

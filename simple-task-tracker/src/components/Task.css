@@ -1,0 +1,27 @@
+.task-view {
+    font: 10px Arial, Sans-Serif;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    justify-content: space-between;
+    width: fit-content;
+}
+
+.task-check {
+    width: 17px;
+    height: 17px;
+    margin-right: 10px;
+    border-radius: 50%;
+    appearance: none;
+    -webkit-appearance: none;
+    border: 1px solid black;
+}
+
+.task-check:checked {
+    clip-path: circle(50% at 50% 50%);
+    background-color: blue;
+    appearance: auto;
+}
+
+
+
