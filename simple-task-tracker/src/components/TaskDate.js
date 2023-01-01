@@ -9,8 +9,8 @@ const TaskDate = ( props ) => {
     const dayOfWeek = weekday[props.date.getDay()]
 
   return (
-        <div className='box'>
-            <div className="">{dayOfWeek}	&#8226; {month} {day}st, {year} </div>
+        <div className='dateView'>
+            <div className="">{dayOfWeek}	&#8226; {month} {day}, {year} </div>
         </div>
   )
 }

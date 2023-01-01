@@ -23,5 +23,12 @@
     appearance: auto;
 }
 
+.task--view * {
+    margin: 3px;
+}
+.task--view {
+    margin: 15px;
+}
+
 
 

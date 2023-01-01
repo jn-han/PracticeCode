@@ -5,21 +5,28 @@ import './Tasks.css'
 
 
 const Tasks = ( props ) => {
+    
+    const saveNewTaskData = (newTask) => {
+        const expenseData = {
+            ...newTask,
+            id: Math.random().toString(),
+        }
+        props.onSaveNewTaskHandler(expenseData);
+    }
+
+
     return (
         <div className='view--tasks'>
             {props.items.map(task => (
-                <div className=''>
-                    <TaskDate 
-                    date={task.date}
-                    key={Math.random()}
-                    />
+                <div>
                     <Task
+                    date={task.date}
                     key={task.id}
                     title={task.title}
                     />
                 </div>
             ))}
-            <TaskForm/>
+            <TaskForm onSaveTaskData={saveNewTaskData}/>
         </div>
     )
 }
