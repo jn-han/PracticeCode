@@ -4,5 +4,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: solid black 1px;
+  width: 80%;
 }
 
+body {
+  position: absolute;
+  left: 50%;
+}
