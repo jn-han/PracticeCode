@@ -1,0 +1,9 @@
+.view--tasks {
+    color: #CED4DA;
+    width: 80%;
+    height: 100%;
+    position: relative;
+    float: right;
+    background-color: #495057;
+    border-left: 1px black solid
+}

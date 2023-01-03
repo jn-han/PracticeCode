@@ -1,6 +1,5 @@
 import Task from './Task'
-import TaskDate from './TaskDate'
-import TaskForm from './TaskForm'
+import TaskForm from '../NewTaskForm/TaskForm'
 import './Tasks.css'
 
 

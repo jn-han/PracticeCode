@@ -1,14 +1,16 @@
 .App {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  border: solid black 1px;
-  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
 }
 
 body {
-  position: absolute;
-  left: 50%;
+  text-align: center;
 }
+
+
+body > #root > div {
+  height: 100vh;
+}
+

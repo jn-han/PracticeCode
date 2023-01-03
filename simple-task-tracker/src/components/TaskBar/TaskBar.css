@@ -1,0 +1,13 @@
+.taskBar {
+    color: #212529;
+    width: 20%;
+    text-align: left;
+    background-color: #6C757D;
+    max-height: 100%;
+    position: absolute;
+    height: 100%;
+}
+
+.taskBar * {
+    margin-left: 10%;
+}
