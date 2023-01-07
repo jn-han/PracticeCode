@@ -8,6 +8,7 @@ const TaskForm = ( props ) => {
     const [enteredDescription, setEnteredDescription] = useState('');
     const [enteredDate, setEnteredDate] = useState('');
     const [enteredSortType, setEnteredSortType] = useState('');
+    const [hasTitle, setHasTitle] = useState(false);
 
     const cancelButtonHandler = () => {
         setShowAddTask(false);
@@ -19,6 +20,11 @@ const TaskForm = ( props ) => {
 
     const taskNameHandler = (e) => {
         setEnteredTaskName(e.target.value);
+        if (e.target.value != '') {
+            setHasTitle(true);
+        } else if (e.target.value == ''){
+            setHasTitle(false);
+        }
     }
 
     const descriptionHandler = (e) => {
@@ -48,7 +54,7 @@ const TaskForm = ( props ) => {
         <div className='taskform--body'>
             {showAddTask
             ?
-            <form onSubmit={submitHandler}>
+            <form onSubmit={submitHandler} className="task--form">
                 <div className='taskform--gatherInfo'>
                     <input type="text" className="task-tBox" placeholder="Task Name" onChange={taskNameHandler}/>
                     <textarea placeholder="Description" className='text-description' onChange={descriptionHandler}></textarea>
@@ -61,7 +67,13 @@ const TaskForm = ( props ) => {
                 </div>
                 <div className='submit--cancel--btn'>
                     <button className='cancelBtn' onClick={cancelButtonHandler}>Cancel</button>
-                    <button type='submit' className='addBtn'>Add Task</button>
+                    { hasTitle 
+                    ?
+                        <button type='submit' className='addBtn'>Add Task</button>
+                    : 
+                        <button className='disabled' disabled>Add Task</button>
+                    }
+
                 </div>
 
             </form>            

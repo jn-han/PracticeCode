@@ -56,9 +56,6 @@ function App() {
     <div className="App">
       <TaskBar items={sortTypes}/>
       <Tasks items={tasks} onSaveNewTaskHandler={saveNewTaskHandler}/>
-
-
-
     </div>
   );
 }
