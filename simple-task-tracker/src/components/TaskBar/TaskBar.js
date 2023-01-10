@@ -1,6 +1,5 @@
 import React from 'react'
 import './TaskBar.css'
-import {BrowserRouter, Route, Link} from 'react-router-dom';
 
 const TaskBar = (props) => {
   return (

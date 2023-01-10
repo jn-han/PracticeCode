@@ -12,6 +12,10 @@ const Tasks = ( props ) => {
         }
         props.onSaveNewTaskHandler(expenseData);
     }
+    
+    const onChecked = (num) => {
+        console.log(num)
+    }
 
 
     return (
@@ -22,6 +26,7 @@ const Tasks = ( props ) => {
                     date={task.date}
                     key={task.id}
                     title={task.title}
+                    onChecked={onChecked}
                     />
                 </div>
             ))}

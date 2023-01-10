@@ -20,9 +20,9 @@ const TaskForm = ( props ) => {
 
     const taskNameHandler = (e) => {
         setEnteredTaskName(e.target.value);
-        if (e.target.value != '') {
+        if (e.target.value !== '') {
             setHasTitle(true);
-        } else if (e.target.value == ''){
+        } else if (e.target.value === ''){
             setHasTitle(false);
         }
     }
