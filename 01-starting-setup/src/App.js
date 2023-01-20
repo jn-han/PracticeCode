@@ -39,7 +39,6 @@ function App() {
   
   return (
     <div>
-      <h1>{DUMMY_EXPENSES[1].date.toDateString()}</h1>
       <NewExpense ExpenseDataHandler={ExpenseDataHandler}/>
       <Expenses items={expenses}/>
     </div>
